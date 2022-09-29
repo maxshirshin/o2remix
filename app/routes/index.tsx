@@ -34,7 +34,7 @@ export default function Index() {
           All-in-one remix starter template for Cloudflare Workers
         </p>
         <p className="py-2">
-          ENV vars passed via Remix context: {JSON.stringify(env)}
+          ENV vars passed via Remix context: {Object.entries(env).forEach(([key, value]) => <div>{key}: {key.indexOf('TOKEN') > -1 ? '***REDACTED***' : value}</div>)}
         </p>
 
         <a
