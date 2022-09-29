@@ -1,48 +1,67 @@
-# Hydrogen Demo Store
+# remix-worker-template
 
-Hydrogen is a React framework and SDK that you can use to build fast and dynamic Shopify custom storefronts.
+> The current starter template is based on Remix 1.5.1
 
-[Check out the docs](https://shopify.dev/custom-storefronts/hydrogen)
+Learn more about [Remix Stacks](https://remix.run/stacks).
 
-[Run this template in JavaScript on StackBlitz](https://stackblitz.com/github/Shopify/hydrogen/tree/dist/templates/demo-store-js?file=package.json)
-
-[Run this template in JavaScript on StackBlitz](https://stackblitz.com/github/Shopify/hydrogen/tree/dist/templates/demo-store-js?file=package.json)
-
-## Getting started
-
-**Requirements:**
-
-- Node.js version 16.14.0 or higher
-- Yarn
-
-To create a new Hydrogen app, run:
-
-```bash
-npm init @shopify/hydrogen
+```
+npx create-remix --template edmundhung/remix-worker-template
 ```
 
-## Running the dev server
+What's included?
 
-Then `cd` into the new directory and run:
+- Deploying to [Cloudflare Workers](https://workers.cloudflare.com/)
+- Supporting [Durable objects](https://developers.cloudflare.com/workers/learning/using-durable-objects) with [module workers](https://developers.cloudflare.com/workers/learning/migrating-to-module-workers/)
+- CI/CD through [Github Actions](https://github.com/features/actions)
+- Styling with [Tailwind](https://tailwindcss.com/)
+- Testing with [Playwright](playwright.dev/) with _undici_ mocking support
+- Code formatting with [Prettier](https://prettier.io)
+- Linting with [ESLint](https://eslint.org)
+- Static Types with [TypeScript](https://typescriptlang.org)
 
-```bash
-npm install
+## Node Version
+
+Please make sure the node version is **>= 16.7**. If you are using `nvm`, just run:
+
+```sh
+nvm use
+```
+
+This allows [miniflare](https://github.com/cloudflare/miniflare) to serve a development environment as close to the actual worker runtime as possibile.
+
+## Development
+
+To starts your app in development mode, rebuilding assets on file changes, the recommended approach is:
+
+```sh
 npm run dev
 ```
 
-Remember to update `hydrogen.config.js` with your shop's domain and Storefront API token!
+This will run your remix app in dev mode using miniflare.
 
-## Building for production
+## Testing
 
-```bash
-npm run build
+Before running the tests, please ensure the worker is built:
+
+```sh
+npm run build && npm run test
 ```
 
-## Previewing a production build
+## Deployment
 
-To run a local preview of your Hydrogen app in an environment similar to Oxygen, build your Hydrogen app and then run `npm run preview`:
+To deploy your Remix app, simply do it with Wrangler using:
 
-```bash
-npm run build
-npm run preview
+```sh
+npx wrangler publish
 ```
+
+## CI/CD
+
+The template ships a [development workflow](./.github/workflows/development.yml) which is triggered whenever new changes are pushed.
+
+To allow GitHub deploying the worker for you, following variables are required:
+
+- CF_API_TOKEN
+- CF_ACCOUNT_ID
+
+These values could be found / created on your Cloudflare Dashboard

@@ -1,0 +1,35 @@
+{
+  "name": "@remix-run/oxygen-workers",
+  "version": "0.0.1",
+  "description": "Oxygen worker request handler for Remix",
+  "bugs": {
+    "url": "https://github.com/remix-run/remix/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/remix-run/remix",
+    "directory": "packages/remix-oxygen-workers"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "module": "dist/esm/index.js",
+  "dependencies": {
+    "@remix-run/oxygen": "0.0.1"
+  },
+  "devDependencies": {
+    "@shopify/oxygen-workers-types": "3.16.0"
+  },
+  "peerDependencies": {
+    "@shopify/oxygen-workers-types": "3.16.0"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "files": [
+    "dist/",
+    "CHANGELOG.md",
+    "LICENSE.md",
+    "README.md"
+  ]
+}
