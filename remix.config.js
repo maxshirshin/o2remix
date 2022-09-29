@@ -3,7 +3,7 @@
  */
 module.exports = {
   appDirectory: 'app',
-  assetsBuildDirectory: 'public/build',
+  assetsBuildDirectory: 'public/client',
   publicPath: process.env.NODE_ENV === "production" ? process.env.HYDROGEN_ASSET_BASE_URL : "/build/",
   serverModuleFormat: 'esm',
   serverPlatform: 'neutral',

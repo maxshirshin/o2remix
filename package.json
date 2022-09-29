@@ -10,7 +10,7 @@
     "build:remix": "remix build",
     "build:style": "cross-env NODE_ENV=production tailwindcss -o ./app/styles/tailwind.css --minify",
     "build:worker": "cross-env NODE_ENV=production VERSION=$(git rev-parse --short HEAD) node ./scripts/build.mjs",
-    "cleanup": "rimraf .cache ./dist ./build ./public/build ./app/styles/tailwind.css",
+    "cleanup": "rimraf .cache ./dist ./build ./public/build ./public/client ./app/styles/tailwind.css",
     "dev": "concurrently \"npm:dev:*\"",
     "old:miniflare": "miniflare --build-command \"node ./scripts/build.mjs\" --build-watch-path ./worker --build-watch-path ./build/index.js --no-cache --watch --open",
     "dev:miniflare": "yarn exec oxygen-preview",
