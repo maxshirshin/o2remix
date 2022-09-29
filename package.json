@@ -3,7 +3,7 @@
   "private": true,
   "description": "All-in-one remix starter template for Cloudflare Workers",
   "sideEffects": false,
-  "main": "./dist/worker.mjs",
+  "main": "./dist/worker.js",
   "scripts": {
     "prebuild": "npm run cleanup",
     "build": "npm run build:style && npm run build:remix && npm run build:worker",

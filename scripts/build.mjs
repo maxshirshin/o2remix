@@ -8,7 +8,7 @@ async function build() {
 
   console.log(`Building Worker in ${mode} mode for version ${version}`);
 
-  const outfile = './dist/worker.mjs';
+  const outfile = './dist/worker.js';
   const startTime = Date.now();
   const result = await esbuild.build({
     entryPoints: ['./worker/index.ts'],

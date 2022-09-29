@@ -1,6 +1,6 @@
 {
   "port": 3000,
-  "workerFile": "dist/worker.mjs",
+  "workerFile": "dist/worker.js",
   "assetsDir": "public/build",
   "publicPath": "/build/",
   "buildCommand": "node ./scripts/build.mjs",
